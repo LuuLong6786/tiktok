@@ -16,7 +16,10 @@ function Header() {
             src="https://iconape.com/wp-content/png_logo_vector/formedia-logo-2.png"
             alt="logoMain"
           ></img>
-          <span className={cx("logo")}>LPOP</span>
+          <span>
+            <img alt="LogoTma" src="/asset/logo-tma.png" style={{ width: "100px" }} />
+          </span>
+          {/* <span className={cx("logo")}>LPOP</span> */}
         </div>
 
         <FontAwesomeIcon icon="fa-light fa-circle-xmark" />
