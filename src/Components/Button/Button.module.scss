@@ -1,13 +1,15 @@
 .wrapper {
   text-align: center;
   min-width: 100px;
-  padding: 9px, 16px;
+  padding: 8px, 10px;
   border-radius: 4px;
   font-size: 1.6rem;
   font-weight: 700;
   cursor: pointer;
   border: 1px solid transparent;
   margin-left: 16px;
+  margin-top: 10px;
+  background-color: orange;
   &.disable {
     pointer-events: none;
     opacity: 0.5;
@@ -46,8 +48,8 @@
   box-shadow: gray;
   border-color: blueviolet;
   &:hover {
-    border-color: blue;
-    background-color: pink;
+    border-color: rgb(201, 201, 212);
+    background-color: rgb(221, 208, 31);
   }
 }
 .icon + .title,

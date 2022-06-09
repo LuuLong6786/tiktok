@@ -1,16 +1,38 @@
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
+import { faCircleQuestion, faCircleXmark, faKeyboard } from "@fortawesome/free-regular-svg-icons";
 
-import { faMagnifyingGlass, faSpinner, faSignIn } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMagnifyingGlass,
+  faSpinner,
+  faSignIn,
+  faEllipsisVertical,
+  faEarthAsia,
+} from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react/headless";
 import { useEffect, useState } from "react";
 import { Wrapper as PopperWrapper } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/Components/Button";
+import Menu from "~/Components/Popper/Menu";
 
 const cx = classNames.bind(styles);
+const MENU_ITEMS = [
+  {
+    icon: <FontAwesomeIcon icon={faEarthAsia} />,
+    title: "English",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+    title: "Feed back and helps",
+    to: "/feedback",
+  },
+  {
+    icon: <FontAwesomeIcon icon={faKeyboard} />,
+    title: "Keyboard shortcuts",
+  },
+];
 
 function Header() {
   const [searchResult, setSearchResult] = useState([]);
@@ -66,6 +88,12 @@ function Header() {
           <Button rounded rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
             Log in
           </Button>
+
+          <Menu items={MENU_ITEMS}>
+            <button className={cx("more-btn")}>
+              <FontAwesomeIcon icon={faEllipsisVertical} />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>
