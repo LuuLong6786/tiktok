@@ -14,10 +14,14 @@
   display: flex;
   justify-content: space-between;
 }
+.logo-header {
+  margin-left: 45px;
+}
 .logo {
   font-size: 30px;
   font-family: Lucida Sans Unicode Calibri, "Trebuchet MS", sans-serif;
   color: rgb(161, 15, 105);
+  margin-left: 30px;
 }
 .search {
   position: relative;
@@ -53,7 +57,7 @@
     height: 30px;
     width: 1px;
     background-color: rgb(15, 12, 15);
-    top: 5px;
+    top: 0px;
     right: 45px;
   }
 }
@@ -79,7 +83,7 @@
 }
 
 .search-btn {
-  width: 60px;
+  width: 0;
   height: 100%;
   border: none;
   outline: none;
@@ -88,10 +92,10 @@
   border-bottom-right-radius: 92px;
   font-size: 2rem;
   color: rgb(80 58 9);
-  margin-right: -15px;
+  margin-right: 18px;
   margin-top: -6px;
   &:hover {
-    color: rgb(136, 117, 10);
+    color: rgb(228, 170, 11);
     cursor: pointer;
   }
   &:active {
@@ -106,7 +110,7 @@
   font-size: 2rem;
   background-color: rgb(4, 4, 4);
   border: none;
-  margin-right: 15px;
-  padding: 8px;
+  margin-right: 22px;
+  padding-left: 24px;
   color: orange;
 }

@@ -1,7 +1,7 @@
 import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleQuestion, faCircleXmark, faKeyboard } from "@fortawesome/free-regular-svg-icons";
+import { faCircleQuestion, faKeyboard, faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 
 import {
   faMagnifyingGlass,
@@ -22,6 +22,19 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthAsia} />,
     title: "English",
+    children: {
+      title: "Languages",
+      data: [
+        {
+          code: "en",
+          title: "English ",
+        },
+        {
+          code: "vi",
+          title: "Tiếng Việt",
+        },
+      ],
+    },
   },
   {
     icon: <FontAwesomeIcon icon={faCircleQuestion} />,
@@ -41,10 +54,14 @@ function Header() {
       setSearchResult([]);
     }, 3000);
   });
+
+  const handleMenuChange = (menuItem) => {
+    console.log("MENU_ITEMS " + JSON.stringify(menuItem));
+  };
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <div>
+        <div className={cx("logo-header")}>
           <img
             height="50"
             src="https://iconape.com/wp-content/png_logo_vector/formedia-logo-2.png"
@@ -53,7 +70,6 @@ function Header() {
           <span>
             <img alt="LogoTma" src="/asset/logo-tma.png" style={{ width: "100px" }} />
           </span>
-          {/* <span className={cx("logo")}>LPOP</span> */}
         </div>
 
         <FontAwesomeIcon icon="fa-light fa-circle-xmark" />
@@ -89,7 +105,7 @@ function Header() {
             Log in
           </Button>
 
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
             <button className={cx("more-btn")}>
               <FontAwesomeIcon icon={faEllipsisVertical} />
             </button>
