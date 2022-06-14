@@ -39,13 +39,16 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             {history.length > 1 && (
               <Header
                 title="Languages"
-                onBack={() => setHistory((prev) => prev.slice(0, prev.length - 1))}
+                onBack={() =>
+                  setHistory((prev) => prev.slice(0, prev.length - 1))
+                }
               />
             )}
             {renderItems()}
           </PopperWrapper>
         </div>
       )}
+      onHide={() => setHistory((prev) => prev.slice(0, 1))}
     >
       {children}
     </Tippy>

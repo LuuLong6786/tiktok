@@ -21,3 +21,14 @@ body {
   line-height: 1.5;
   text-rendering: optimizeSpeed;
 }
+// Custom tippy tooltip
+.tippy-box {
+  background-color: #333;
+  color: #afb717;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  white-space: normal;
+  outline: 0;
+  transition-property: transform, visibility, opacity;
+}
